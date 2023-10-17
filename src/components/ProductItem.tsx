@@ -34,7 +34,7 @@ export function ProductItem({
         src={imgUrl}
         height='266px'
         width='223px'
-        className='rounded-0'
+        className='rounded-0 border'
         style={{ objectFit: 'cover' }}
       />
       <Card.Body>
@@ -47,11 +47,11 @@ export function ProductItem({
         <span> {formatCurrency(price)}</span>
 
           {quantity === 0 ? (
-            <Button
+            <Button variant='dark'
               className='w-50 position-relative'
               style={{ right: '-40%' }}
               onClick={() => increaseBasketQuantity(id)}>
-              + Add icon
+              Add
             </Button >
           ) : (
             <div
@@ -62,11 +62,11 @@ export function ProductItem({
                 className="d-flex align-items-center justify-content-center w-50 position-relative"
                 style={{ gap: ".5rem", top: '20px', right: '20px' }}
               >
-                <Button onClick={() => decreaseBasketQuantity(id)}>-</Button>
+                <Button variant='dark' onClick={() => decreaseBasketQuantity(id)}>-</Button>
                 <div>
                   <span className="fs-3">{quantity}</span> in Basket
                 </div>
-                <Button onClick={() => increaseBasketQuantity(id)}>+</Button>
+                <Button variant='dark' onClick={() => increaseBasketQuantity(id)}>+</Button>
               </div>
             
             </div>
