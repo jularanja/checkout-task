@@ -8,26 +8,45 @@ export function Checkout() {
   const { BasketQuantity } = useShoppingBasket();
   return (
     <>
-      <Container className='d-flex p-4 g-4 justify-content-center align-items-center'>
-        <Row className='justify-content-center p-4 g-4 '>
+      <Container className='d-flex p-6 g-4 justify-content-center align-items-center'>
+        <Row
+          className='justify-content-center p-5 g-4 row-product'
+          style={{ maxWidth: '1080px' }}>
           {storeItems.map((item) => (
             <Col
               xs={6}
               key={item.id}
-              className='w-50'>
+              className=' d-flex justify-content-center'>
               <ProductItem {...item} />
             </Col>
           ))}
         </Row>
       </Container>
-      <Container style={{ minHeight: '4rem', display: "flex" , justifyContent:"center" }}>
+      <Container
+        style={{
+          minHeight: '4rem',
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '80px',
+        }}>
         {BasketQuantity > 0 && (
           <Link to={'/basket'}>
             <Button
-              style={{  height: '3rem', position: 'relative' }}
+              style={{ width: '400px', height: '90px', position: 'relative' }}
               variant='dark'
               className='rounded'>
-              Go to Checkout
+              <div
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: 30,
+                  fontFamily: 'Roboto',
+                  fontWeight: '700',
+                  wordWrap: 'break-word',
+                }}>
+                Go to checkout
+              </div>
+
               <div
                 className='rounded-circle bg-danger d-flex justify-content-center align-items-center'
                 style={{

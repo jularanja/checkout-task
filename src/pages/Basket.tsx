@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom';
 export function Basket() {
   const { BasketItems } = useShoppingBasket();
   return (
-    <Container>
-      <Card className='w-100'>
-        <Container>
+    <Container style={{padding:'85px 0'}}  >
+      <Card className='w-100' style={{width: '100%', height: '100%', background: '#F3F2F0', borderRadius: 35}}>
+        
           <Card.Header>
             <Card.Title>Order summary</Card.Title>
           </Card.Header>
           <Card.Body>
             <Stack gap={3}>
               {BasketItems.map((item) => (
-                <BasketItem key={item.id} {...item} />
+                <BasketItem key={item.id} {...item}  />
               ))}
 
               <div className='ms-auto  fs-10'>
@@ -35,7 +35,7 @@ export function Basket() {
               </div>
             </Stack>
           </Card.Body>
-        </Container>
+        
       </Card>
       <Container
         style={{
@@ -46,10 +46,20 @@ export function Basket() {
         <Link to={'/'}>
           {' '}
           <Button
-            style={{ height: '3rem', position: 'relative' }}
-            variant='outiline-dark'
+            style={{ width: '400px', height: '90px',  position: 'relative' }}
+            variant='outline-dark'
             className='rounded'>
-            Continue shopping
+                 <div
+                  style={{
+                    textAlign: 'center',
+                    color: 'black',
+                    fontSize: 30,
+                    fontFamily: 'Roboto',
+                    fontWeight: '700',
+                    wordWrap: 'break-word',
+                  }}>
+                  Go to checkout
+                </div>
           </Button>
         </Link>
         <Link to={'/vending'}>

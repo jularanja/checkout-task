@@ -1,0 +1,26 @@
+body {
+  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+h3 {
+
+  color: #231F20;
+
+text-align: center;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .row-product{
+    display: block !important;
+    margin: 0;
+  }
+}
