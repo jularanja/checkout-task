@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react"
+import { createContext, ReactNode, useContext } from "react"
 import { ShoppingBasket } from "../components/ShoppingBasket"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 
@@ -12,8 +12,6 @@ type BasketItem = {
 }
 
 type ShoppingBasketContext = {
-  openBasket: () => void
-  closeBasket: () => void
   getItemQuantity: (id: number) => number
   increaseBasketQuantity: (id: number) => void
   decreaseBasketQuantity: (id: number) => void
@@ -22,13 +20,15 @@ type ShoppingBasketContext = {
   BasketItems: BasketItem[]
 }
 
+
+
 const ShoppingBasketContext = createContext({} as ShoppingBasketContext)
 
 export function useShoppingBasket() {
   return useContext(ShoppingBasketContext)
 }
 export function ShoppingBasketProvider({ children }: ShoppingBasketProviderProps) {
-  const [isOpen, setIsOpen] = useState(false)
+
   const [BasketItems, setBasketItems] = useLocalStorage<BasketItem[]>(
     "shopping-Basket",
     []
@@ -39,8 +39,6 @@ export function ShoppingBasketProvider({ children }: ShoppingBasketProviderProps
     0
   )
 
-  const openBasket = () => setIsOpen(true)
-  const closeBasket = () => setIsOpen(false)
   function getItemQuantity(id: number) {
     return BasketItems.find(item => item.id === id)?.quantity || 0
   }
@@ -90,14 +88,12 @@ export function ShoppingBasketProvider({ children }: ShoppingBasketProviderProps
         increaseBasketQuantity,
         decreaseBasketQuantity,
         removeFromBasket,
-        openBasket,
-        closeBasket,
         BasketItems,
         BasketQuantity,
       }}
     >
       {children}
-      <ShoppingBasket isOpen={isOpen} />
+      <ShoppingBasket/>
     </ShoppingBasketContext.Provider>
   )
 }
