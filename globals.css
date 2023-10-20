@@ -111,6 +111,11 @@ line-height: normal;
   bottom: 160px
 }
 
+.css-ufe16i-MuiRating-root {
+  color: #000 !important;
+ 
+}
+
 .switch-pin {
   background-color: #918f8f;
   height: 40px;
