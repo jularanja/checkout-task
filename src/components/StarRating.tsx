@@ -12,7 +12,7 @@ export function StarRating() {
         '& > legend': { mt: 2 },
       }}      
     >
-      <Rating
+      <Rating style={{color:'black'}}
         name="simple-controlled"
         value={value}
         onChange={(_event, newValue) => {
