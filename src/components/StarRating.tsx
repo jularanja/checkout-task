@@ -10,7 +10,7 @@ export function StarRating() {
     <Box
       sx={{
         '& > legend': { mt: 2 },
-      }}
+      }}      
     >
       <Rating
         name="simple-controlled"
@@ -18,6 +18,10 @@ export function StarRating() {
         onChange={(_event, newValue) => {
           setValue(newValue);
         }}
+        size="large"
+        sx={{
+          fontSize: "9rem"          
+        }}        
       />
      
     </Box>

@@ -1,5 +1,5 @@
-import { Button, Stack } from 'react-bootstrap';
-import { useShoppingBasket } from '../context/ShoppingBasketContext';
+import { Stack } from 'react-bootstrap';
+
 import storeItems from '../data/items.json';
 import { formatCurrency } from '../utilities/formatCurrency';
 
@@ -9,43 +9,36 @@ type BasketItemProps = {
 };
 
 export function BasketItem({ id, quantity }: BasketItemProps) {
-  const { removeFromBasket } = useShoppingBasket();
+
   const item = storeItems.find((i) => i.id === id);
   if (item == null) return null;
 
   return (
-    <Stack
-      direction='horizontal'
-      gap={2}
-      className='d-flex align-items-center'>
+    <Stack direction='horizontal' className='d-flex align-items-center'>
       <img
         src={item.imgUrl}
-        style={{ width: '125px', height: '75px', objectFit: 'cover' }}
+        style={{ width: '110px', height: '100px', objectFit: 'cover', marginRight:'30px' }}
       />
-      <div className='me-auto'>
-        <div>
+
+      <div>
+        <h3 style={{ fontSize: '32px', fontWeight: '400', marginRight:'140px', fontFamily: 'Roboto'}}>
           {item.name}{' '}
           {quantity > 1 && (
-            <span
-              className='text-muted'
-              style={{ fontSize: '.65rem' }}>
+            <span className='text-muted' style={{ fontSize: '.65rem' }}>
               x{quantity}
             </span>
           )}
-        </div>
-        <div
-          className='text-muted'
-          style={{ fontSize: '.75rem' }}>
+        </h3>
+
+        <div className='text-muted' style={{ fontSize: '.75rem' }}>
           {formatCurrency(item.price)}
         </div>
       </div>
-      <div> {formatCurrency(item.price * quantity)}</div>
-      <Button
-        variant='outline-danger'
-        size='sm'
-        onClick={() => removeFromBasket(item.id)}>
-        &times;
-      </Button>
+
+      <div style={{ fontSize: '32px', fontWeight: '400', marginRight:'30px', fontFamily: 'Open Sans', marginTop: '-30px'}}> {formatCurrency(item.price * quantity)}</div>
+
+ 
+
     </Stack>
   );
 }

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: ''Roboto'', sans-serif !important;
   font-family: 'Inter', sans-serif !important;
 }
 
@@ -15,7 +15,195 @@ line-height: normal;
 
 }
 
+.vending-card-body {
+  background-color: #F3F2F0;
+  padding: 10px 180px;
+  height: 1920px;
+  padding-top: 100px;
+}
+.vending-card {    
+  height: 115px;
+  width: 137px;
+}
 
+.vending-card .quantity {
+  float: right;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(158, 156, 156, 0.25);
+  font-weight: 400;
+  border-radius: 5.05px;
+  font-size: 27.78px;
+  line-height: 50.55px;
+  position: relative;
+  z-index: 2;
+}
+
+.vending-card .image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 112px;  
+  height: 86px;
+  position: relative;
+  bottom: -30px;  
+}
+
+.we-love {
+  font-family: 'Roboto';
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 53px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.collect {
+  font-family: 'Roboto';
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 59px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+#machine {
+  background-color: #231F20;
+  height: 950px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 10px;
+  padding: 50px;  
+}
+
+#screen {
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.carets {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 75px;
+}
+
+.carets span {
+  color: white; 
+  font-size: 90px;
+  font-family: monospace;
+  line-height: 0.2;
+  font-weight: bold;  
+}
+
+.switch {
+  height: 120px;
+  width: 90px;
+  border: 5px solid #918f8f;
+  border-radius: 10px;
+  padding: 10px;
+  float: right;
+  position: relative;
+  bottom: 160px
+}
+
+.switch-pin {
+  background-color: #918f8f;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.collect-button {
+  display: flow-root;
+  width: 100%;
+  text-align: center;
+}
+
+.collect-here {
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  border: 5px solid white;
+  display: block;
+  position: relative;
+  bottom: 129px;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  background: black;
+  border-radius: 15px;
+  padding: 19px 16px;
+  margin-right: 35px;
+  margin-left: 35px;
+  box-shadow: 0px 0px 45px gray;
+  font-weight: bold;
+}
+
+.carets span:nth-child(1) {
+  animation: span1 1s infinite;
+}
+@keyframes span1{
+  0% {
+    color: white;
+  }  
+  20% {
+    color: yellow;
+  }
+  30% {
+    color: white;
+  } 
+}
+
+.carets span:nth-child(3) {
+  animation: span2 1s infinite;
+}
+@keyframes span2{
+  0% {
+    color: white;
+  }  
+  40% {
+    color: yellow;
+  }
+  50% {
+    color: white;
+  } 
+}
+
+.carets span:nth-child(5) {
+  animation: span3 1s infinite;
+}
+@keyframes span3{
+  0% {
+    color: white;
+  }  
+  60% {
+    color: yellow;
+  }
+  70% {
+    color: white;
+  } 
+}
+
+.collect-here {
+  animation: collect 1s infinite;
+}
+@keyframes collect{
+  0% {
+    color: white;
+    border-color: white;
+  }  
+  60% {
+    color: yellow;
+    border-color: yellow;
+  }
+  70% {
+    color: white;
+    border-color: white;
+  } 
+}
 
 
 @media only screen and (max-width: 600px) {
